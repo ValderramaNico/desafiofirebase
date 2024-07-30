@@ -26,10 +26,6 @@ export default createStore({
     setEmail(state, email) {
       state.email = email;
     },
-    clearNewUser(state) {
-      state.newUser = "";
-      state.email = "";
-    },
   },
   actions: {
     async getUsers({ commit }) {
