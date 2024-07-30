@@ -12,19 +12,11 @@ import {
 export default createStore({
   state: {
     users: [],
-    newUser: "",
-    email: "",
   },
   getters: {},
   mutations: {
     setUsers(state, users) {
       state.users = users;
-    },
-    setNewUser(state, newUser) {
-      state.newUser = newUser;
-    },
-    setEmail(state, email) {
-      state.email = email;
     },
   },
   actions: {
@@ -39,14 +31,13 @@ export default createStore({
         commit("setUsers", users);
       });
     },
-    async addUser({ state, commit }) {
-      if (state.newUser.trim() === '' || state.email.trim() === '') return;
+    async addUser(context, {name, email}) {
       const db = getFirestore(firebaseApp);
       const usersRef = collection(db, "users");
-      await addDoc(usersRef, { user: state.newUser, email: state.email });
-      commit("clearNewUser");
+      await addDoc(usersRef, { name: name, email: email });
+
     },
-    async deleteUser(index, userId) {
+    async deleteUser(context, userId) {
       const db = getFirestore(firebaseApp);
       const userDoc = doc(db, "users", userId);
       await deleteDoc(userDoc);
