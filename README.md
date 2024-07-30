@@ -1,24 +1,15 @@
-# desafiofirebase
+# Desafío - Firebase
 
-## Project setup
-```
-npm install
-```
+1. Almacenar datos recibidos de Firestore.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+2. Crear un componente que agregue nuevos usuarios a la base de datos. 
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+3. Crear un componente que muestre todos los usuarios registrados. 
+
+
+4. Permitirle a los usuarios de la aplicación eliminar los registros de la base de datos.
+
+
+### Por Nicolás Valderrama
